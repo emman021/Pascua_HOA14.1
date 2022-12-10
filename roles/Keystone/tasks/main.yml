@@ -1,0 +1,11 @@
+- name: Keystone Installation
+  apt:
+    name: keystone
+    state: present
+    update_cache: yes
+
+#- name: Starting Keystone
+#  service:
+#    name: keystone
+#    state: restarted
+#    enabled: yes

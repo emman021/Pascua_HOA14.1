@@ -1,0 +1,17 @@
+---
+- hosts: all
+  become: true
+  pre_tasks:
+
+  - name: Installing updates (Ubuntu)
+    apt:
+      upgrade: dist
+      update_cache: yes
+    changed_when: false
+
+- hosts: ubuntu_controller_node
+  become: true
+  roles:
+    - Keystone
+    - Glance
+    - Nova
